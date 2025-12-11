@@ -10,12 +10,14 @@ r = redis.Redis(
     password="e8IYRU5wGjL9OgzU3bjyy3tuNoTELPXP",
 )
 
-# Adicionar tarefas
+#questão2
+
+# adicionar tarefas
 r.rpush("tarefas", "Estudar Redis")
 r.rpush("tarefas", "Fazer exercícios")
 r.rpush("tarefas", "Ler um livro")
 
-# Listar todas as tarefas
+# listar todas as tarefas
 tarefas = r.lrange("tarefas", 0, -1)
 print("Lista de tarefas:", tarefas)
 
@@ -67,6 +69,8 @@ usuario_saiu("user_202")
 listar_online()
 
 
+#questão 5
+
 # Função de rate limiting
 def permitir_requisicao(user_id, limite=5, janela=60):
     """
@@ -88,17 +92,17 @@ def permitir_requisicao(user_id, limite=5, janela=60):
         return False, contagem
     return True, contagem
 
-# --- Exemplo de uso ---
 user = "user_101"
 
 for i in range(7):
     permitido, contagem = permitir_requisicao(user)
     if permitido:
-        print(f"✅ Requisição {i+1} permitida (total: {contagem})")
+        print(f"Requisição {i+1} permitida (total: {contagem})")
     else:
-        print(f"⛔ Requisição {i+1} bloqueada (total: {contagem})")
+        print(f"Requisição {i+1} bloqueada (total: {contagem})")
     time.sleep(5)  # simula intervalo entre requisições
 
+#questão6
 
 # Conjuntos para um usuário
 seguidores_key = "user:101:seguidores"
