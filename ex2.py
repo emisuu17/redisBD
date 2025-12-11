@@ -9,6 +9,8 @@ r = redis.Redis(
     password="e8IYRU5wGjL9OgzU3bjyy3tuNoTELPXP",
 )
 
+#QUESTÃO 2
+
 # Adicionar jogadores com suas pontuações
 r.zadd("ranking", {"Alice": 1500, "Bob": 1200, "Carol": 1800, "David": 900, "Eve": 2000})
 

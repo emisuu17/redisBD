@@ -10,7 +10,7 @@ r = redis.Redis(
     password="e8IYRU5wGjL9OgzU3bjyy3tuNoTELPXP",
 )
 
-#questão2
+#QUESTÃO 1
 
 # adicionar tarefas
 r.rpush("tarefas", "Estudar Redis")
@@ -28,7 +28,7 @@ print("Tarefa concluída:", removida)
 # Remover uma tarefa específica pelo valor
 r.lrem("tarefas", 1, "Ler um livro")
 
-#questão 3
+#QUESTÃO 3
 
 contador_chave = "pagina:home:visitas"
 
@@ -37,7 +37,7 @@ novo_valor = r.incr(contador_chave)
 print(f"A página foi acessada {novo_valor} vezes.")
 
 
-#questão4
+#QUESTÃO4
 
 # Nome da chave para o conjunto
 usuarios_online = "usuarios:online"
@@ -69,7 +69,7 @@ usuario_saiu("user_202")
 listar_online()
 
 
-#questão 5
+#QUESTÃO 5
 
 # Função de rate limiting
 def permitir_requisicao(user_id, limite=5, janela=60):
@@ -102,7 +102,7 @@ for i in range(7):
         print(f"Requisição {i+1} bloqueada (total: {contagem})")
     time.sleep(5)  # simula intervalo entre requisições
 
-#questão6
+#QUESTÃO 6
 
 # Conjuntos para um usuário
 seguidores_key = "user:101:seguidores"
